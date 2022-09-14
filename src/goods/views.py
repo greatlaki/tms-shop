@@ -4,7 +4,7 @@ from rest_framework.response import Response
 from rest_framework.parsers import JSONParser, MultiPartParser
 
 from models import Category, Product, Feedback
-from .serializers import CategorySerializer, ProductListSerializer, FeedbackSerializer
+from .serializers import CategorySerializer, ProductListSerializer, FeedbackSerializer, ProductDetailSerializer
 
 
 class CategoryListView(ListAPIView):
