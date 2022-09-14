@@ -20,6 +20,12 @@ class CategorySerializer(ModelSerializer):
         fields = '__all__'
 
 
+class ProductDetailSerializer(ModelSerializer):
+    class Meta:
+        model = Product
+        fields = '__all__'
+
+
 class FeedbackSerializer(ModelSerializer):
 
     class Meta:
