@@ -1,5 +1,5 @@
 from rest_framework import mixins, status
-from rest_framework.generics import ListAPIView, GenericAPIView
+from rest_framework.generics import ListAPIView, GenericAPIView, RetrieveAPIView
 from rest_framework.response import Response
 from rest_framework.parsers import JSONParser, MultiPartParser
 
@@ -15,6 +15,13 @@ class CategoryListView(ListAPIView):
 class ProductsListView(ListAPIView):
     queryset = Product.objects.filter(available=True)
     serializer_class = ProductListSerializer
+
+
+class ProductDetailView(RetrieveAPIView):
+    queryset = Product.objects.all()
+    serializer_class = ProductDetailSerializer
+
+    lookup_field = 'slug'
 
 
 class FeedbackView(mixins.CreateModelMixin, GenericAPIView):
