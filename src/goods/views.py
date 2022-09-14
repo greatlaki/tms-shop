@@ -24,6 +24,16 @@ class ProductDetailView(RetrieveAPIView):
     lookup_field = 'slug'
 
 
+class CategoryDetailView(ListAPIView):
+    queryset = Product.objects.all()
+    serializer_class = ProductListSerializer
+    lookup_field = 'slug'
+
+    def get_queryset(self):
+        qs = super().get_queryset()
+        return qs.filter(category__slug=self.kwargs['slug'], available=True)
+
+
 class FeedbackView(mixins.CreateModelMixin, GenericAPIView):
     queryset = Feedback.objects.all()
     serializer_class = FeedbackSerializer
