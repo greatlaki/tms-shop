@@ -44,6 +44,7 @@ INSTALLED_APPS = [
 
     # Local
     'goods.apps.GoodsConfig',
+
     # 3rd party
     'rest_framework',
     'corsheaders',
