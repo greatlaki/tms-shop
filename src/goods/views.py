@@ -3,7 +3,7 @@ from rest_framework.generics import ListAPIView, GenericAPIView, RetrieveAPIView
 from rest_framework.response import Response
 from rest_framework.parsers import JSONParser, MultiPartParser
 
-from models import Category, Product, Feedback
+from .models import Category, Product, Feedback
 from .serializers import CategorySerializer, ProductListSerializer, FeedbackSerializer, ProductDetailSerializer
 
 
